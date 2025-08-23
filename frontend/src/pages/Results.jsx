@@ -30,7 +30,7 @@ export default function Results() {
 
   return (
     <div className="bg-white rounded-2xl shadow p-6">
-      {/* ✅ Show poll question & id */}
+     
       {poll && (
         <>
           <h2 className="text-2xl font-semibold mb-1">{poll.question}</h2>

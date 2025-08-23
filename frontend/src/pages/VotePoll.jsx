@@ -31,7 +31,7 @@ export default function VotePoll() {
  const handleVote = async (optionId) => {
   try {
     await API.post(`/${id}/vote`, { optionId });
-    navigate(`/results/${id}`, { replace: true });  // ✅ ensures fresh fetch
+    navigate(`/results/${id}`, { replace: true });  
   } catch (err) {
     alert("Error submitting vote. Please try again.");
   }

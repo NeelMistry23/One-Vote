@@ -25,7 +25,7 @@ export default function CreatePoll() {
       const fullUrl = `${window.location.origin}/vote/${res.data.id}`;
 
       setShareUrl(fullUrl);
-      setPollId(res.data.id); // ✅ store new poll id globally
+      setPollId(res.data.id); 
     } catch (err) {
       console.error("Error creating poll:", err);
       alert("Something went wrong. Please try again.");
@@ -37,9 +37,9 @@ export default function CreatePoll() {
     <h1 className="text-2xl font-semibold mb-4">Create a Poll</h1>
 
     <div className="flex flex-col md:flex-row gap-8">
-      {/* Left: Poll form */}
+      
       <div className="flex-1">
-        {/* Question */}
+       
         <label className="block text-sm mb-1">Question</label>
         <input
           className="w-full border rounded-xl px-3 py-2 mb-4"
@@ -47,7 +47,7 @@ export default function CreatePoll() {
           onChange={e => setQuestion(e.target.value)}
         />
 
-        {/* Options */}
+       
         <label className="block text-sm mb-1">Options</label>
         <div className="grid gap-2 mb-2">
           {optionInputs.map((opt, i) => (
@@ -71,7 +71,7 @@ export default function CreatePoll() {
           + Add Option
         </button>
 
-        {/* Expiry */}
+       
         <div className="flex items-center gap-3 mb-4">
           <span className="text-sm">Expiry (hours)</span>
           <input
@@ -83,7 +83,7 @@ export default function CreatePoll() {
           />
         </div>
 
-        {/* Create Button */}
+        
         <button
           onClick={handleCreate}
           className="bg-slate-900 text-white rounded-xl px-4 py-2"
@@ -92,7 +92,7 @@ export default function CreatePoll() {
         </button>
       </div>
 
-      {/* Right: Share poll */}
+      
       {shareUrl && (
         <div className="flex-1 text-center md:border-l md:pl-8">
           <p className="text-sm mb-2">Share this poll</p>
