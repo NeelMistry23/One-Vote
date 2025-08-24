@@ -2,16 +2,15 @@ import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 dotenv.config();
 
-const pool = mysql.createPool({
+const connection = await mysql.createConnection({
   host: process.env.DB_HOST || "localhost",
   user: process.env.DB_USER || "root",
   password: process.env.DB_PASS || "",
   database: process.env.DB_NAME || "onevote",
-  port: process.env.DB_PORT || 3307,   
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
+  port: process.env.DB_PORT || 3307,
 });
+const pool = connection.pool();
+
 
 export default pool;
 
