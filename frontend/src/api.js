@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://api-onevote.onrender.com/api/polls",
+  baseURL: "http://localhost:5000/api/polls",
 });
 
 export default API;

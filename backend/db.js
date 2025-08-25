@@ -8,9 +8,7 @@ const pool = mysql.createPool({
   password: process.env.DB_PASS || "",
   database: process.env.DB_NAME || "onevote",
   port: process.env.DB_PORT || 3307,   
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
+
 });
 
 export default pool;
